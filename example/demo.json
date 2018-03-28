@@ -1,0 +1,96 @@
+{
+  "version": "1.0",
+  "tables": {
+    "tar": {
+      "name": "tar",
+      "engine": "InnoDB",
+      "autoIncrement": null,
+      "comment": "",
+      "collation": "utf8_general_ci",
+      "charset": "utf8",
+      "type": "table",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int(11)",
+          "null": true,
+          "default": null,
+          "oridinal": 1,
+          "comment": "",
+          "autoIncrement": false
+        }
+      },
+      "keys": {
+        "id": {
+          "name": "id",
+          "type": "MULTIPLE",
+          "columns": [
+            "id"
+          ],
+          "using": "BTREE",
+          "comment": ""
+        }
+      }
+    },
+    "too": {
+      "name": "too",
+      "engine": "InnoDB",
+      "autoIncrement": null,
+      "comment": "",
+      "collation": "utf8_general_ci",
+      "charset": "utf8",
+      "type": "table",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int(11)",
+          "null": true,
+          "default": null,
+          "oridinal": 1,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "age": {
+          "name": "age",
+          "type": "int(11)",
+          "null": true,
+          "default": null,
+          "oridinal": 2,
+          "comment": "",
+          "autoIncrement": false
+        }
+      },
+      "keys": {
+        "ia": {
+          "name": "ia",
+          "type": "MULTIPLE",
+          "columns": [
+            "id",
+            "age"
+          ],
+          "using": "BTREE",
+          "comment": ""
+        }
+      }
+    }
+  },
+  "foreignKeys": {
+    "fka": {
+      "name": "fka",
+      "referer": {
+        "table": "too",
+        "columns": [
+          "id"
+        ]
+      },
+      "referee": {
+        "table": "tar",
+        "columns": [
+          "id"
+        ]
+      },
+      "onDelete": "RESTRICT",
+      "onUpdate": "RESTRICT"
+    }
+  }
+}

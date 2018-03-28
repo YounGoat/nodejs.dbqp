@@ -1,0 +1,479 @@
+{
+  "tables": {
+    "departments": {
+      "name": "departments",
+      "engine": "InnoDB",
+      "autoIncrement": null,
+      "comment": "",
+      "collation": "utf8_general_ci",
+      "charset": "utf8",
+      "type": "table",
+      "columns": {
+        "dept_no": {
+          "name": "dept_no",
+          "type": "char(4)",
+          "null": false,
+          "default": null,
+          "oridinal": 1,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "dept_name": {
+          "name": "dept_name",
+          "type": "varchar(40)",
+          "null": false,
+          "default": null,
+          "oridinal": 2,
+          "comment": "",
+          "autoIncrement": false
+        }
+      },
+      "keys": {
+        "PRIMARY": {
+          "name": "PRIMARY",
+          "type": "PRIMARY",
+          "columns": [
+            "dept_no"
+          ],
+          "comment": ""
+        },
+        "dept_name": {
+          "name": "dept_name",
+          "type": "MULTIPLE",
+          "columns": [
+            "dept_name"
+          ],
+          "comment": ""
+        }
+      }
+    },
+    "dept_emp": {
+      "name": "dept_emp",
+      "engine": "InnoDB",
+      "autoIncrement": null,
+      "comment": "",
+      "collation": "utf8_general_ci",
+      "charset": "utf8",
+      "type": "table",
+      "columns": {
+        "emp_no": {
+          "name": "emp_no",
+          "type": "int(11)",
+          "null": false,
+          "default": null,
+          "oridinal": 1,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "dept_no": {
+          "name": "dept_no",
+          "type": "char(4)",
+          "null": false,
+          "default": null,
+          "oridinal": 2,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "from_date": {
+          "name": "from_date",
+          "type": "date",
+          "null": false,
+          "default": null,
+          "oridinal": 3,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "to_date": {
+          "name": "to_date",
+          "type": "date",
+          "null": false,
+          "default": null,
+          "oridinal": 4,
+          "comment": "",
+          "autoIncrement": false
+        }
+      },
+      "keys": {
+        "PRIMARY": {
+          "name": "PRIMARY",
+          "type": "PRIMARY",
+          "columns": [
+            "emp_no",
+            "dept_no"
+          ],
+          "comment": ""
+        },
+        "dept_no": {
+          "name": "dept_no",
+          "type": "UNIQUE",
+          "columns": [
+            "dept_no"
+          ],
+          "comment": ""
+        }
+      }
+    },
+    "dept_manager": {
+      "name": "dept_manager",
+      "engine": "InnoDB",
+      "autoIncrement": null,
+      "comment": "",
+      "collation": "utf8_general_ci",
+      "charset": "utf8",
+      "type": "table",
+      "columns": {
+        "emp_no": {
+          "name": "emp_no",
+          "type": "int(11)",
+          "null": false,
+          "default": null,
+          "oridinal": 1,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "dept_no": {
+          "name": "dept_no",
+          "type": "char(4)",
+          "null": false,
+          "default": null,
+          "oridinal": 2,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "from_date": {
+          "name": "from_date",
+          "type": "date",
+          "null": false,
+          "default": null,
+          "oridinal": 3,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "to_date": {
+          "name": "to_date",
+          "type": "date",
+          "null": false,
+          "default": null,
+          "oridinal": 4,
+          "comment": "",
+          "autoIncrement": false
+        }
+      },
+      "keys": {
+        "PRIMARY": {
+          "name": "PRIMARY",
+          "type": "PRIMARY",
+          "columns": [
+            "emp_no",
+            "dept_no"
+          ],
+          "comment": ""
+        },
+        "dept_no": {
+          "name": "dept_no",
+          "type": "UNIQUE",
+          "columns": [
+            "dept_no"
+          ],
+          "comment": ""
+        }
+      }
+    },
+    "employees": {
+      "name": "employees",
+      "engine": "InnoDB",
+      "autoIncrement": null,
+      "comment": "",
+      "collation": "utf8_general_ci",
+      "charset": "utf8",
+      "type": "table",
+      "columns": {
+        "emp_no": {
+          "name": "emp_no",
+          "type": "int(11)",
+          "null": false,
+          "default": null,
+          "oridinal": 1,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "birth_date": {
+          "name": "birth_date",
+          "type": "date",
+          "null": false,
+          "default": null,
+          "oridinal": 2,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "first_name": {
+          "name": "first_name",
+          "type": "varchar(14)",
+          "null": false,
+          "default": null,
+          "oridinal": 3,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "last_name": {
+          "name": "last_name",
+          "type": "varchar(16)",
+          "null": false,
+          "default": null,
+          "oridinal": 4,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "gender": {
+          "name": "gender",
+          "type": "enum('M','F')",
+          "null": false,
+          "default": null,
+          "oridinal": 5,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "hire_date": {
+          "name": "hire_date",
+          "type": "date",
+          "null": false,
+          "default": null,
+          "oridinal": 6,
+          "comment": "",
+          "autoIncrement": false
+        }
+      },
+      "keys": {
+        "PRIMARY": {
+          "name": "PRIMARY",
+          "type": "PRIMARY",
+          "columns": [
+            "emp_no"
+          ],
+          "comment": ""
+        }
+      }
+    },
+    "salaries": {
+      "name": "salaries",
+      "engine": "InnoDB",
+      "autoIncrement": null,
+      "comment": "",
+      "collation": "utf8_general_ci",
+      "charset": "utf8",
+      "type": "table",
+      "columns": {
+        "emp_no": {
+          "name": "emp_no",
+          "type": "int(11)",
+          "null": false,
+          "default": null,
+          "oridinal": 1,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "salary": {
+          "name": "salary",
+          "type": "int(11)",
+          "null": false,
+          "default": null,
+          "oridinal": 2,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "from_date": {
+          "name": "from_date",
+          "type": "date",
+          "null": false,
+          "default": null,
+          "oridinal": 3,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "to_date": {
+          "name": "to_date",
+          "type": "date",
+          "null": false,
+          "default": null,
+          "oridinal": 4,
+          "comment": "",
+          "autoIncrement": false
+        }
+      },
+      "keys": {
+        "PRIMARY": {
+          "name": "PRIMARY",
+          "type": "PRIMARY",
+          "columns": [
+            "emp_no",
+            "from_date"
+          ],
+          "comment": ""
+        }
+      }
+    },
+    "titles": {
+      "name": "titles",
+      "engine": "InnoDB",
+      "autoIncrement": null,
+      "comment": "",
+      "collation": "utf8_general_ci",
+      "charset": "utf8",
+      "type": "table",
+      "columns": {
+        "emp_no": {
+          "name": "emp_no",
+          "type": "int(11)",
+          "null": false,
+          "default": null,
+          "oridinal": 1,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "title": {
+          "name": "title",
+          "type": "varchar(50)",
+          "null": false,
+          "default": null,
+          "oridinal": 2,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "from_date": {
+          "name": "from_date",
+          "type": "date",
+          "null": false,
+          "default": null,
+          "oridinal": 3,
+          "comment": "",
+          "autoIncrement": false
+        },
+        "to_date": {
+          "name": "to_date",
+          "type": "date",
+          "null": true,
+          "default": null,
+          "oridinal": 4,
+          "comment": "",
+          "autoIncrement": false
+        }
+      },
+      "keys": {
+        "PRIMARY": {
+          "name": "PRIMARY",
+          "type": "PRIMARY",
+          "columns": [
+            "emp_no",
+            "title",
+            "from_date"
+          ],
+          "comment": ""
+        }
+      }
+    }
+  },
+  "foreignKeys": {
+    "dept_emp_ibfk_1": {
+      "name": "dept_emp_ibfk_1",
+      "referer": {
+        "table": "dept_emp",
+        "columns": [
+          "emp_no"
+        ]
+      },
+      "referee": {
+        "table": "employees",
+        "columns": [
+          "emp_no"
+        ]
+      },
+      "onDelete": "CASCADE",
+      "onUpdate": "RESTRICT"
+    },
+    "dept_emp_ibfk_2": {
+      "name": "dept_emp_ibfk_2",
+      "referer": {
+        "table": "dept_emp",
+        "columns": [
+          "dept_no"
+        ]
+      },
+      "referee": {
+        "table": "departments",
+        "columns": [
+          "dept_no"
+        ]
+      },
+      "onDelete": "CASCADE",
+      "onUpdate": "RESTRICT"
+    },
+    "dept_manager_ibfk_1": {
+      "name": "dept_manager_ibfk_1",
+      "referer": {
+        "table": "dept_manager",
+        "columns": [
+          "emp_no"
+        ]
+      },
+      "referee": {
+        "table": "employees",
+        "columns": [
+          "emp_no"
+        ]
+      },
+      "onDelete": "CASCADE",
+      "onUpdate": "RESTRICT"
+    },
+    "dept_manager_ibfk_2": {
+      "name": "dept_manager_ibfk_2",
+      "referer": {
+        "table": "dept_manager",
+        "columns": [
+          "dept_no"
+        ]
+      },
+      "referee": {
+        "table": "departments",
+        "columns": [
+          "dept_no"
+        ]
+      },
+      "onDelete": "CASCADE",
+      "onUpdate": "RESTRICT"
+    },
+    "salaries_ibfk_1": {
+      "name": "salaries_ibfk_1",
+      "referer": {
+        "table": "salaries",
+        "columns": [
+          "emp_no"
+        ]
+      },
+      "referee": {
+        "table": "employees",
+        "columns": [
+          "emp_no"
+        ]
+      },
+      "onDelete": "CASCADE",
+      "onUpdate": "RESTRICT"
+    },
+    "titles_ibfk_1": {
+      "name": "titles_ibfk_1",
+      "referer": {
+        "table": "titles",
+        "columns": [
+          "emp_no"
+        ]
+      },
+      "referee": {
+        "table": "employees",
+        "columns": [
+          "emp_no"
+        ]
+      },
+      "onDelete": "CASCADE",
+      "onUpdate": "RESTRICT"
+    }
+  }
+}

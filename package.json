@@ -1,0 +1,31 @@
+{
+    "name": "dbqp",
+    "version": "0.0.1",
+    "description": "A sync tool for MySQL database schema",
+    "main": "mysql/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": {
+        "name": "YounGoat",
+        "email": "youngoat@163.com",
+        "url": "https://youngoat.github.io"
+    },
+    "license": "Apache License 2.0",
+    "bin": {
+        "dbqp": "bin/dbqp.js"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "directories": {},
+    "keywords": [
+        "mysql-sync",
+        "mysql-dump",
+        "mysql-diff"
+    ],
+    "homepage": "https://github.com/YounGoat/nodejs.dbqp",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/YounGoat/nodejs.dbqp.git"
+    }
+}

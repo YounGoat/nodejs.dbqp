@@ -1,0 +1,38 @@
+
+NAME
+    dbqp diff - Generate SQLs to make two databases consistent.
+
+SYNOPSIS
+    dbqp diff [--host <dbhost>] [--port <port>] 
+              [--user <username>] [--password <password>]
+              [--referer-database <dbname>] [--referee-database <dbname>] 
+              [--output <pathname>]
+
+OPTIONS
+    --host <dbhost>
+    Database server hostname.
+
+    --port <port>
+    Database server port.
+
+    --user <username>
+    Database user name.
+
+    --password <password>
+    Database user password.
+
+    --referer-database | --referer | -r <database>
+    Database to be changed to keep pace with the referee database.  
+    Option value <database> may be name of database, or pathname of a schema 
+    JSON file (ends with .json).
+
+    --referee-database | --referee | -R <database>
+    Database plays the role of referee.
+    Option value <database> may be name of database, or pathname of a schema 
+    JSON file (ends with .json).
+
+    --output <pathname>
+    Where to save dump data.
+    
+SEE ALSO
+    dbqp sync

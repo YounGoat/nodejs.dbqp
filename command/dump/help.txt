@@ -1,0 +1,27 @@
+
+NAME
+    dbqp dump - Dump schema information from database.
+
+SYNOPSIS
+    dbqp dump [--host <dbhost>] [--port <port>] 
+              [--user <username>] [--password <password>]
+              [--database <dbname>] [--output <pathname>]
+
+OPTIONS
+    --host <dbhost>
+    Database server hostname.
+
+    --port <port>
+    Database server port.
+
+    --user <username>
+    Database user name.
+
+    --password <password>
+    Database user password.
+
+    --database <dbname>
+    Database name.
+
+    --output <pathname>
+    Where to save dump data.

@@ -1,0 +1,32 @@
+
+NAME
+    dbqp sync - Change one database and keep it consistent to the other.
+
+SYNOPSIS
+    dbqp sync [--host <dbhost>] [--port <port>] 
+              [--user <username>] [--password <password>]
+              [--referer-database <dbname>] [--referee-database <database>] 
+              
+OPTIONS
+    --host <dbhost>
+    Database server hostname.
+
+    --port <port>
+    Database server port.
+
+    --user <username>
+    Database user name.
+
+    --password <password>
+    Database user password.
+
+    --referer-database | --referer | -r <dbname>
+    Database to be changed to keep pace with the referee database.
+
+    --referee-database | --referee | -R <database>
+    Database plays the role of referee.
+    Option value <database> may be name of database, or pathname of a schema 
+    JSON file (ends with .json).
+
+SEE ALSO
+    dbqp diff
