@@ -19,15 +19,31 @@ function help() {
 	console.log(noda.nextRead('help.txt', 'utf8'));
 }
 
-function sync(connectOptions, referer, referee) {
+function sync(connectOptions, referer, referee, force) {
 	let conn = new dbqp.Connection(connectOptions);
-	conn.sync(referer, referee, (err, metaJson) => {
+	conn.sync(referer, referee, force, (err, metaJson) => {
 		conn.destroy();
 		if (err) {
 			console.error(err.message);
 		}
 		else {
 			console.log('Database schema synchronization succeeded.');
+		}
+	});
+}
+
+function diff(connectOptions, referer, referee) {
+	let conn = new dbqp.Connection(connectOptions);
+	conn.diff(referer, referee, (err, SQLs) => {
+		conn.destroy();
+		if (err) {
+			console.error(err.message);
+		}
+		else {
+			SQLs.forEach((SQL, index) => {
+				console.log('--', index);
+				console.log(SQL);
+			})
 		}
 	});
 }
@@ -44,6 +60,8 @@ function run(argv) {
 			'--password -P NOT NULL',
 			'--referer --referer-database -r [0] NOT NULL REQUIRED',
 			'--referee --referee-database -R [1] NOT NULL REQUIRED',
+			'--dry-run -d NOT ASSIGNABLE',
+			'--force -f NOT ASSIGNABLE',
 		],
 	];
 
@@ -74,7 +92,9 @@ function run(argv) {
 			return dbname;
 		};
 		referee = verifyDatabase(referee);
-		return sync(connectOptions, referer, referee);
+
+		(cmd['dry-run'] ? diff : sync)(connectOptions, referer, referee, cmd.force);
+		return;
 	}
 }
 

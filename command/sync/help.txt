@@ -6,6 +6,7 @@ SYNOPSIS
     dbqp sync [--host <dbhost>] [--port <port>] 
               [--user <username>] [--password <password>]
               [--referer-database <dbname>] [--referee-database <database>] 
+              [--dry-run] [--force]
               
 OPTIONS
     --host <dbhost>
@@ -27,6 +28,12 @@ OPTIONS
     Database plays the role of referee.
     Option value <database> may be name of database, or pathname of a schema 
     JSON file (ends with .json).
+
+    --dry-run
+    Display the sync SQLs instead of really execute them.
+
+    --force
+    Ingore errors.
 
 SEE ALSO
     dbqp diff
